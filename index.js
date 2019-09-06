@@ -1,8 +1,9 @@
 // This is for fun, code ain't gonna be beautiful for you. But thanks for looking buddy :)
-const string = "Meet me at the pier cigarettes and beer I'll cut your hair I don't care";
+let string = "I made this last night Jeff and wanted to show you because it is kinda cool :D";
 let index = 0;
 
 $(function() {
+  string = $.urlParam('string') ? unescape($.urlParam('string')) : string;
   const words = string.split(' ');
   for (let i=0; i < words.length; i++) {
     let word = words[i];
@@ -26,3 +27,11 @@ $(function() {
     index = index%words.length;
   }, 750);
 });
+
+
+$.urlParam = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                      .exec(window.location.search);
+
+    return (results !== null) ? results[1] || 0 : false;
+}
