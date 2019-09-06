@@ -1,0 +1,26 @@
+body {
+  margin: 100px auto 0;
+  padding: 0;
+  background: black;
+  width: 400px;
+}
+
+.word {
+  color: #aaa;
+  height: 27px;
+  font-size: 140px;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+}
+
+.word--active {
+  animation-name: active;
+  animation-duration: .75s;
+}
+
+@keyframes active {
+  0% {color: #aaa;}
+  50% {color: white;}
+  100% {color: #aaa;}
+}
